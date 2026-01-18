@@ -1,30 +1,33 @@
-import axios from 'axios';
+const BASE_URL = "https://mohinraju-youtube-toolkit.onrender.com";
 
-const api = axios.create({
-    baseURL: '/api',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-});
+export async function extractThumbnail(videoUrl) {
+    const response = await fetch(`${BASE_URL}/api/thumbnail/extract`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ videoUrl }),
+    });
 
-export const generateHashtags = async (topic, count) => {
-    try {
-        const response = await api.post('/hashtags/generate', { topic, count });
-        return response.data;
-    } catch (error) {
-        console.error('Error generating hashtags', error);
-        throw error;
+    if (!response.ok) {
+        throw new Error("Failed to extract thumbnail");
     }
-};
 
-export const extractThumbnail = async (youtubeUrl) => {
-    try {
-        const response = await api.post('/thumbnail/extract', { youtubeUrl });
-        return response.data;
-    } catch (error) {
-        console.error('Error extracting thumbnail', error);
-        throw error;
+    return response.json();
+}
+
+export async function generateHashtags(topic, count = 30) {
+    const response = await fetch(`${BASE_URL}/api/hashtags/generate`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ topic, count }),
+    });
+
+    if (!response.ok) {
+        throw new Error("Failed to generate hashtags");
     }
-};
 
-export default api;
+    return response.json();
+}
