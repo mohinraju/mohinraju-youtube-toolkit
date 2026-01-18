@@ -11,10 +11,11 @@ const Home = () => {
             <header className="app-header">
                 <div className="brand-wrapper">
                     <img src="/favicon.svg" alt="App Logo" className="brand-logo" />
-                    <h1 className="brand-title">Yubexo</h1>
+                    <h1 className="brand-title">YouTube Toolkit – Free Thumbnail & Hashtag Generator</h1>
                 </div>
                 <p className="brand-subtitle">
-                    Smart growth tools for modern YouTube creators 🚀
+                    Instantly generate SEO-optimized hashtags and download high-resolution thumbnails.
+                    Designed for YouTube creators to save time and boost video performance.
                 </p>
             </header>
 
