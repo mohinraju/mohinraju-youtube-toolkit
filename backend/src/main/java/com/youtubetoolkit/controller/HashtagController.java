@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/hashtags")
+@CrossOrigin(origins = "https://mohinraju-youtube-toolkit.vercel.app")
 public class HashtagController {
 
     @Autowired

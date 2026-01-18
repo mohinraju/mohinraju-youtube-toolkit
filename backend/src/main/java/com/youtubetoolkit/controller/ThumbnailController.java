@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/thumbnail")
+@CrossOrigin(origins = "https://mohinraju-youtube-toolkit.vercel.app")
 public class ThumbnailController {
 
     @Autowired
