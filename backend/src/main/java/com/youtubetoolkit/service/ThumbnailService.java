@@ -11,7 +11,11 @@ import java.util.regex.Pattern;
 public class ThumbnailService {
 
     public ThumbnailResponseDTO extractThumbnail(ThumbnailRequestDTO request) {
-        String videoId = extractVideoId(request.getYoutubeUrl());
+        if (request == null || request.getVideoUrl() == null || request.getVideoUrl().isBlank()) {
+            throw new IllegalArgumentException("Video URL cannot be empty");
+        }
+
+        String videoId = extractVideoId(request.getVideoUrl());
 
         if (videoId == null) {
             throw new IllegalArgumentException("Invalid YouTube URL");

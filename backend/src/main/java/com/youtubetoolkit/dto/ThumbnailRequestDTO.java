@@ -1,20 +1,20 @@
 package com.youtubetoolkit.dto;
 
 public class ThumbnailRequestDTO {
-    private String youtubeUrl;
+    private String videoUrl;
 
     public ThumbnailRequestDTO() {
     }
 
-    public ThumbnailRequestDTO(String youtubeUrl) {
-        this.youtubeUrl = youtubeUrl;
+    public ThumbnailRequestDTO(String videoUrl) {
+        this.videoUrl = videoUrl;
     }
 
-    public String getYoutubeUrl() {
-        return youtubeUrl;
+    public String getVideoUrl() {
+        return videoUrl;
     }
 
-    public void setYoutubeUrl(String youtubeUrl) {
-        this.youtubeUrl = youtubeUrl;
+    public void setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl;
     }
 }
